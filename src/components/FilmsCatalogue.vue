@@ -14,45 +14,16 @@
 
 <script>
 import MyFilmCard from "./MyFilmCard.vue";
-import axios from "axios";
 
 
 export default {
   name: "FilmsCatatlogue",
-
+  props :["films"]
+,
   components: {
     MyFilmCard,
   },
 
-  data: function () {
-    return {
-        films:[],
-    };
-  },
-
-
-   methods: {
-    getFilms() {
-      // console.log('recupero i miei film')
-      axios
-        .get(
-          "https://api.themoviedb.org/3/search/movie?api_key=0f0e365597e3faf30d3153696fbdd26d&query=300"
-        )
-        .then((result) => {
-          this.films=result.data.results
-                    console.log(this.films);
-
-        })
-
-        .catch((error) => {
-          console.warn(error);
-        });
-    },
-  },
-
-  created() {
-    this.getFilms();
-  },
 };
 </script>
 

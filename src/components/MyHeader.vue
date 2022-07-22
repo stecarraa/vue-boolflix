@@ -4,8 +4,8 @@
   <div class="container">
     <a class="navbar-brand">BOOLFLIX</a>
     <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit" @click.prevent="">Search</button>
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="query">
+      <button class="btn btn-outline-success" type="submit" @click.prevent="$emit('getFilms', query)" >Search</button>
     </form>
   </div>
 </nav>
@@ -18,7 +18,7 @@ export default {
     
     data(){
         return{
-            
+            query:''
         }
     }
 }
