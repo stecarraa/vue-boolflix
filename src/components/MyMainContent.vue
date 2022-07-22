@@ -1,16 +1,20 @@
 <template>
   <div class="container">
-    <FilmsCatalogue />
+    <FilmsCatalogue :films="films" />
   </div>
 </template>
 
 <script>
 import FilmsCatalogue from "./FilmsCatalogue.vue";
 export default {
+  props:{
+    'films':Array,
+  },
   components: {
     FilmsCatalogue,
   },
 };
 </script>
 
-<style></style>
+<style>
+</style>
