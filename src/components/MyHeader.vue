@@ -1,10 +1,14 @@
 <template>
     <header>
-        <div class="title"><h1>Boolflix</h1></div>
-        <form>
-            <input type="text" v-model='searchText'>
-            <button type="submit" @click.prevent="$emit('search',searchText)">Ricerca</button>
-        </form>
+     <nav class="navbar bg-light">
+  <div class="container">
+    <a class="navbar-brand">BOOLFLIX</a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit" @click.prevent="">Search</button>
+    </form>
+  </div>
+</nav>
     </header>
 </template>
 
@@ -14,12 +18,12 @@ export default {
     
     data(){
         return{
-            searchText:'',
+            
         }
     }
 }
 </script>
 
 <style lang="scss" scoped>
-   
+
 </style>
