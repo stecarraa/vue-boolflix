@@ -7,9 +7,13 @@
         alt=""
       />
       <div class="card-body">
-        <p class="">
-          {{film.original_title}}- {{film.title}}- {{film.vote_average}}- {{film.original_language}}
-        </p>
+       
+          {{film.original_title}}- {{film.title}}- {{film.vote_average}}-
+          <div>
+                        <img class="flag" v-if="language.includes(film.original_language)" :src="require('../assets/' + film.original_language + '.png')" alt="">
+                        <span v-else> {{film.original_language}}</span>
+                    </div>
+        
       </div>
     </div>
   </div>
@@ -18,13 +22,26 @@
 <script>
 
 export default {
+  data(){
+        return{
+            language:['en','it','fr'],
+        }
+    },
+
   name: "MyFilmCard",
 
-  props:['film']
- 
+props:{
+        'film':Object
+    }, 
 
   
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.flag{
+    width: 30px;
+    height: 15px;
+    object-fit: cover;
+}
+</style>
