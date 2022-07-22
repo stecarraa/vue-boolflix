@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MyHeader @getFilms="getFilms(query)"/>
+    <MyHeader @getFilms="getFilms"/>
     <MyMainContent :films="films"/>
     <MyFooter/>
 
@@ -25,7 +25,8 @@ export default {
     return {
         films:[],
         apiKey: '0f0e365597e3faf30d3153696fbdd26d',
-        apiUrl:'https://api.themoviedb.org/3/search/movie'
+        apiUrl:'https://api.themoviedb.org/3/search/movie',
+        query:''
     };
   },
    methods: {
@@ -33,7 +34,7 @@ export default {
       // console.log('recupero i miei film')
       axios
         .get(
-          `${this.apiUrl}?$api_key=${this.apiKey}&query=${query}`
+          `${this.apiUrl}?api_key=${this.apiKey}&query=${query}`
         )
         .then((result) => {
           this.films=result.data.results
@@ -46,9 +47,7 @@ export default {
         });
     },
   },
-  created() {
-    this.getFilms();
-  },
+  
 }
 </script>
 
