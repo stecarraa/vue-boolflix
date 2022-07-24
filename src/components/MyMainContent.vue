@@ -7,9 +7,9 @@
 <script>
 import FilmsCatalogue from "./FilmsCatalogue.vue";
 export default {
-  props:{
-    'films':Array,
-    'series':Array,
+  props: {
+    films: Array,
+    series: Array,
   },
   components: {
     FilmsCatalogue,
@@ -17,5 +17,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

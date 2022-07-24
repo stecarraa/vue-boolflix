@@ -2,7 +2,7 @@
   <div>
     <div class="row pt-4 p-3">
       <div class="col-12">
-        <h1>Lista dei film</h1>
+        <h1>Lista dei film </h1>
       </div>
       <MyFilmCard
         class="col-2 g-2"
@@ -10,16 +10,15 @@
         :key="film.id"
         :film="film"
       />
-       <div class="col-12">
+      <div class="col-12">
         <h1>Lista delle SerieTv</h1>
       </div>
-       <MySerieCard
+      <MySerieCard
         class="col-2 g-2"
         v-for="serie in series"
         :key="serie.id"
         :serie="serie"
       />
-
     </div>
   </div>
 </template>
@@ -30,7 +29,7 @@ import MySerieCard from "./MySerieCard.vue";
 
 export default {
   name: "FilmsCatalogue",
-  props: ["films","series"],
+  props: ["films", "series"],
   components: {
     MyFilmCard,
     MySerieCard,
