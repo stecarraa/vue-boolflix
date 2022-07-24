@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <MyHeader @getFilms="getFilms"/>
-    <MyMainContent :films="films"/>
+    <MyHeader @getFilms="FindMeSomething"/>
+    <MyMainContent :films="films" :series="series"/>
     <MyFooter/>
 
   </div>
@@ -24,21 +24,45 @@ export default {
    data: function () {
     return {
         films:[],
+        series:[],
         apiKey: '0f0e365597e3faf30d3153696fbdd26d',
-        apiUrl:'https://api.themoviedb.org/3/search/movie',
+        apiUrl:'https://api.themoviedb.org/3/search/',
         query:''
     };
   },
    methods: {
+
+  FindMeSomething(query){
+    this.getFilms(query);
+    this.getSeries(query);
+  },
+
     getFilms(query) {
       // console.log('recupero i miei film')
       axios
         .get(
-          `${this.apiUrl}?api_key=${this.apiKey}&query=${query}`
+          `${this.apiUrl}movie?api_key=${this.apiKey}&query=${query}`
         )
         .then((result) => {
           this.films=result.data.results
                     console.log(this.films);
+
+        })
+
+        .catch((error) => {
+          console.warn(error);
+        });
+    },
+
+     getSeries(query) {
+      // console.log('recupero le serie tv')
+      axios
+        .get(
+          `${this.apiUrl}tv?api_key=${this.apiKey}&query=${query}`
+        )
+        .then((result) => {
+          this.series=result.data.results
+                    console.log(this.series);
 
         })
 
