@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <FilmsCatalogue :films="films" />
+    <FilmsCatalogue :films="films" :series="series" />
   </div>
 </template>
 
@@ -9,6 +9,7 @@ import FilmsCatalogue from "./FilmsCatalogue.vue";
 export default {
   props:{
     'films':Array,
+    'series':Array,
   },
   components: {
     FilmsCatalogue,

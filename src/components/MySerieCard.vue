@@ -8,7 +8,7 @@
       />
       <div class="card-body">
        
-          {{serie.original_title}}- {{serie.title}}- {{serie.vote_average}}-
+          {{serie.original_name}}- {{serie.title}}- {{serie.vote_average}}-
           <div>
                         <img class="flag" v-if="language.includes(serie.original_language)" :src="require('../assets/' + serie.original_language + '.png')" alt="">
                         <span v-else> {{serie.original_language}}</span>

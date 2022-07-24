@@ -30,7 +30,7 @@ import MySerieCard from "./MySerieCard.vue";
 
 export default {
   name: "FilmsCatalogue",
-  props: ["films","serie"],
+  props: ["films","series"],
   components: {
     MyFilmCard,
     MySerieCard,
