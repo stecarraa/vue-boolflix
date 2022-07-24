@@ -2,7 +2,7 @@
   <div>
     <div class="card">
       <img
-        src="https://cdn1.thespacecinema.it/-/media/tsc/2022/07/thor-love-and-thunder/locandina.jpg?w=400"
+        :src="`https://image.tmdb.org/t/p/w342${film.poster_path}`"
         class="card-img-top"
         alt=""
       />
