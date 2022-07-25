@@ -35,16 +35,17 @@ export default {
   FindMeSomething(query) {
      const params={
           params:{
-            'api_key':this.apyKey,
-            'query':query,
+            'api_key':this.apiKey,
+            'query':query
           }
         };
+        console.log(params)
         this.getFilms(params);
         this.getSeries(params);
     },
 
     getFilms(params) {
-      // console.log('recupero i miei film')
+      console.log(params);
       axios
         .get('https://api.themoviedb.org/3/search/movie' , params)
         .then((result) => {
@@ -60,7 +61,7 @@ export default {
     getSeries(params) {
       // console.log('recupero le serie tv')
       axios
-        .get('https://api.themoviedb.org/3/search/tv/' , params)
+        .get('https://api.themoviedb.org/3/search/tv' , params)
         .then((result) => {
           this.series = result.data.results;
           console.log(this.series);
