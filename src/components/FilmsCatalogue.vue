@@ -5,7 +5,7 @@
         <h1 class="text-white">Lista dei film:</h1>
       </div>
       <MyFilmCard
-        class="col g-4"
+        class="col-4 g-4"
         v-for="film in films"
         :key="film.id"
         :film="film"
@@ -14,7 +14,7 @@
         <h1 class="text-white">Lista delle SerieTv:</h1>
       </div>
       <MySerieCard
-        class="col g-4"
+        class="col-4 g-3"
         v-for="serie in series"
         :key="serie.id"
         :serie="serie"
