@@ -1,20 +1,20 @@
 <template>
   <div>
-    <div class="row pt-4 p-3">
-      <div class="col-12">
-        <h1 class="text-white">Lista dei film </h1>
+    <div class="row pt-4">
+      <div class="col-12 mt-3">
+        <h1 class="text-white">Lista dei film:</h1>
       </div>
       <MyFilmCard
-        class="col g-2"
+        class="col g-4"
         v-for="film in films"
         :key="film.id"
         :film="film"
       />
-      <div class="col-12">
-        <h1 class="text-white">Lista delle SerieTv</h1>
+      <div class="col-12  mt-3">
+        <h1 class="text-white">Lista delle SerieTv:</h1>
       </div>
       <MySerieCard
-        class="col g-3"
+        class="col g-4"
         v-for="serie in series"
         :key="serie.id"
         :serie="serie"

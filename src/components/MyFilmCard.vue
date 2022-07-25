@@ -22,7 +22,7 @@
             <i
               v-for="i in 5"
               :key="i"
-              class="fa-star"
+              class="fa-star text-success"
               :class="i < returnStars ? 'fa-solid' : 'fa-regular'"
             ></i>
             {{ film.vote_averange }}
