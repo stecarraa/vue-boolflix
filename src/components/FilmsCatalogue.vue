@@ -14,7 +14,7 @@
         <h1 class="text-white">Lista delle SerieTv</h1>
       </div>
       <MySerieCard
-        class="col-2 g-2"
+        class="col g-3"
         v-for="serie in series"
         :key="serie.id"
         :serie="serie"
