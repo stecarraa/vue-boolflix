@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
+<div class="container-fluid bg-secondary">
+    <div class="container">
     <FilmsCatalogue :films="films" :series="series" />
   </div>
+</div>
 </template>
 
 <script>
